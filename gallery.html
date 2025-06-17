@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Science Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://cdn.glitch.global/a424c671-d40d-4172-b77e-5d28d867cf59/new%20seker%203.png?v=1749526406976" type="image/x-icon"> 
+    <link rel="icon" href="https://cdn.glitch.global/a424c671-d40d-4172-b77e-5d28d867cf59/new%20seker%203.png?v=1749526406976" type="image/png">
+</head>
+<body>
+    <video autoplay muted loop playsinline id="desktop-background-video">
+        <source src="https://cdn.glitch.global/b41ebe00-cbf2-40e4-b7cd-5175204ea5e3/body%20i%20background%20vid.mp4?v=1749354812183" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header id="main-header">
+        <div class="container">
+            <h1 class="logo">Cosmic Seeker</h1>
+            <nav id="navbar">
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="articles.html">Research</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="library.html">Library</a></li> 
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="end.html">Vision</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="gallery-categories" class="section bg-light">
+            <div class="container">
+                <div class="category-nav">
+                    <a href="#canva-designs" class="btn btn-category">Canva Designs</a>
+                    <a href="#space-science-gallery" class="btn btn-category">Space Science img</a>
+                    <a href="#earth-science-gallery" class="btn btn-category">Bio Science img</a>
+                </div>
+
+                <div id="canva-designs" class="gallery-category">
+                    <h3>Canva Designs</h3>
+                    <p>My personal designs created using Canva, categorized for easy Browse.</p>
+
+                    <div class="sub-category-nav">
+                        <a href="#logos" class="btn btn-sub-category">Logos</a>
+                        <a href="#fb-posts" class="btn btn-sub-category">FB Posts</a>
+                        <a href="#insta-posts" class="btn btn-sub-category">Insta Posts</a>
+                    </div>
+
+                    <div id="logos" class="sub-category-content grid-container">
+                        <h4>Logos</h4>
+                        <div class="item">
+                            <h4>My Logo</h4>
+                            <img src="images/my_logo.png" alt="My Logo" class="img-responsive">
+                            <p>My astronomy project logo (created with Canva).</p>
+                        </div>
+                        </div>
+
+                    <div id="fb-posts" class="sub-category-content grid-container">
+                        <h4>Facebook Posts</h4>
+                        </div>
+
+                    <div id="insta-posts" class="sub-category-content grid-container">
+                        <h4>Instagram Posts</h4>
+                        </div>
+                </div> <div id="space-science-gallery" class="gallery-category">
+                    <h3>Space Science img</h3>
+                    <p>Visual interpretations of cosmic phenomena, from planets to galaxies.</p>
+                    <div class="grid-container">
+                        <div class="item">
+                            <img src="images/galaxy_art.jpg" alt="Galaxy Art" class="img-responsive">
+                            <p>An artistic rendition of a distant galaxy.</p>
+                        </div>
+                        <div class="item">
+                            <img src="images/nebula_image.jpg" alt="Nebula Image" class="img-responsive">
+                            <p>Stunning image of a cosmic nebula.</p>
+                        </div>
+                        <div class="item">
+                            <img src="images/constellation_map.jpg" alt="Constellation Map" class="img-responsive">
+                            <p>A map depicting various constellations.</p>
+                        </div>
+                        <div class="item">
+                            <img src="images/planet_series.jpg" alt="Planet Series" class="img-responsive">
+                            <p>A series of illustrations on planets in our solar system.</p>
+                        </div>
+                        </div>
+                </div> <div id="earth-science-gallery" class="gallery-category">
+                    <h3>Bio Science img</h3>
+                    <p>Artistic renderings inspired by geological formations and natural phenomena on Earth.</p>
+                    <div class="grid-container">
+                        </div>
+                </div> </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My Science Portfolio. All rights reserved.</p>
+            <p>Data provided by NASA, GBIF, and Other websites.</p>
+            <p>Designed and Developed by Savija Rumeth.</p>
+          <p><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></p>
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>

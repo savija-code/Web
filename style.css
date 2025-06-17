@@ -1,0 +1,1329 @@
+/* මූලික සැකසුම් සහ typography */
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* කියවීමට පහසු ෆොන්ට් එකක් */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #000000; /* වීඩියෝ එක load නොවන්නේ නම් පෙන්වීමට default color එක */
+}
+
+#desktop-background-video {
+    position: fixed; /* තිරයේ ස්ථාවරව තැබීමට */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* video එක තිරය පුරා පැතිරවීමට */
+    z-index: -2; /* අනෙකුත් අන්තර්ගතයට යටින් තැබීමට (hero-video එකටත් යටින්) */
+    display: block; /* Default ලෙස (PC/Tablet වල) පෙන්වීමට */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* මාතෘකා සඳහා පොදු font එකක් */
+}
+
+/* H1 මාතෘකා සඳහා විශේෂ styles */
+h1 {
+    font-size: 3.5em; /* විශාලතම මාතෘකාව */
+    color: #06c4f3; /* දීප්තිමත් නිල් (ඔබගේ hero h2 color) */
+    margin-bottom: 20px;
+}
+
+/* H2 මාතෘකා සඳහා විශේෂ styles */
+h2 {
+    font-size: 2.8em;
+    color: #00fdfd; /* තරමක් ලා නිල් */
+    margin-bottom: 25px;
+    text-shadow:
+        0 0 5px rgba(3, 41, 56, 0.7), /* ලා නිල් glow */
+        0 0 10px rgba(3, 41, 56, 0.7),
+        0 0 15px rgba(3, 41, 56, 0.7),
+        0 0 20px rgba(3, 41, 56, 0.7); /* තවත් වැඩි glow එකක් සඳහා */
+}
+
+/* H3 මාතෘකා සඳහා විශේෂ styles */
+h3 {
+    font-size: 1.8em;
+    color: #ffa600; /* රන්වන්/තැඹිලි පාට */
+    margin-bottom: 15px;
+}
+
+/* H4 මාතෘකා සඳහා විශේෂ styles */
+h4 {
+    font-size: 1.4em;
+    color: #00fcbd; /* කොළ පාට */
+    margin-bottom: 10px;
+}
+
+/* ඔබට h5 සහ h6 සඳහාද මෙලෙසම styles දිය හැක */
+h5 {
+    font-size: 1.2em;
+    color: #df01f3; /* අළු පාට */
+}
+
+h6 {
+    font-size: 1em;
+    color: #71b3f5; /* තද අළු පාට */
+}
+
+.container {
+    width: 90%; /* අන්තර්ගතය හොඳින් පෙන්වීමට තරමක් පළල් */
+    max-width: 1200px; /* විශාල තිර මත කියවීමට පහසු වන උපරිම පළල */
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Header සහ ස්ථාවර Navbar */
+#main-header {
+    background:rgb(0, 1, 8); /* තද නිල්, කළු පැහැයට ආසන්නයි */
+    color: #fff;
+    padding: 15px 0;
+    min-height: 60px;
+    border-bottom: #4a90e2 3px solid; /* දීප්තිමත් නිල් අලංකරණයක් */
+    position: fixed; /* Header එක ස්ථාවරව තැබීමට */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* අනෙකුත් අන්තර්ගතයන්ට උඩින් තබා ගැනීමට */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.295); /* ගැඹුරක් සඳහා සියුම් සෙවනක් */
+}
+#main-header.scrolled {
+    background: rgba(0, 0, 0, 0.7); /* Scroll කරන විට නැවත තද වර්ණයක් ලබා දීමට */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Scroll කරන විට Shadow එක ශක්තිමත් කිරීමට */
+}
+
+#main-header .container {
+    display: flex; /* පෙළගැස්වීම සඳහා flexbox භාවිතා කරන්න */
+    justify-content: space-between; /* logo සහ nav අතර ඉඩක් තැබීමට */
+    align-items: center; /* අයිතම සිරස් අතට පෙළගැස්වීමට */
+}
+
+.logo {
+    margin: 0;
+    padding: 0;
+    font-size: 1.8em;
+    color: #fffb08; /* logo සඳහා off-white */
+    letter-spacing: 1px;
+}
+
+#navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex; /* nav අයිතම පේළියක පෙන්වීමට */
+}
+
+#navbar li {
+    padding: 0 15px;
+}
+
+#navbar a {
+    color: #fdfdfd;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+}
+
+#navbar a:hover {
+    color: #ff9900; /* hover කිරීමේදී දීප්තිමත් නිල් */
+    border-bottom: 2px solid #ffbb00; /* hover කිරීමේදී යටින් ඉරි ඇඳීම */
+}
+/* Navbar - වර්තමාන පිටුව සලකුණු කිරීම සඳහා */
+#navbar .nav-links li a.active-page {
+    color: #4a90e2; /* දීප්තිමත් නිල් - ඔබ hover වලට දෙන වර්ණයම හෝ වෙනත් වර්ණයක් */
+    border-bottom: 2px solid #4a90e2; /* යටින් ඉරි ඇඳීම */
+    font-weight: bold; /* අකුරු තද කිරීමට */
+}
+
+/* විශාල තිර මත menu toggle එක නොපෙන්වීමට */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ස්ථාවර header එක සමඟ ගැටීම වැළැක්වීමට ප්‍රධාන අන්තර්ගතයට padding */
+main {
+    padding-top: 80px; /* header උස අනුව සකස් කරන්න */
+}
+
+/* Hero Section - ප්‍රධාන පසුබිම් රූපය */
+.hero {
+    min-height: 560px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* වීඩියෝව container එකෙන් එළියට නොයන්න */
+    padding: 60px 0;
+}
+
+/* Hero වීඩියෝ පසුබිම සඳහා */
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%; /* මේක 100% ලෙසම තියන්න */
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* background-size: cover; වෙනුවට object-fit: cover; භාවිතා කරන්න */
+}
+
+.hero::before { /* අඳුරු ආවරණයක් */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.295); /* තරමක් අඳුරු ආවරණයක් */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1; /* text සහ button වීඩියෝවට සහ overlay එකට උඩින් තැබීමට */
+    padding: 20px; /* content එක වටේට ඉඩක් තැබීමට */
+    max-width: 800px; /* content එකේ පළල සීමා කිරීමට */
+}
+
+.hero h2 {
+    font-size: 3.2em; /* තරමක් සකස් කළ ෆොන්ට් ප්‍රමාණය */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    color: #00b7ff; /* hero මාතෘකාව සඳහා සුදු */
+}
+
+.hero p {
+    font-size: 1.15em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons - බොත්තම් වල පෙනුම */
+.btn {
+    display: inline-block;
+    color: #000000;
+    background: #02c4ff; /* දීප්තිමත් නිල් */
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #ffa600; /* තරමක් තද නිල් */
+    transform: translateY(-2px); /* තරමක් ඉහළට එසවීමේ ආචරණය */
+}
+
+.btn-small {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    background: #ffd000; /* කොළ පාට */
+}
+
+.btn-small:hover {
+    background: #ff6600;
+}
+
+/* Sections - කොටස් වල පොදු styles */
+.section {
+    padding: 60px 0; /* වැඩි සිරස් පරතරය */
+    text-align: center;
+    background: rgba(10, 10, 10, 0.7);
+}
+
+.section h2 {
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #35068b; /* සියුම් යටින් ඉරි ඇඳීම */
+    display: inline-block; /* මාතෘකාවට යටින් පමණක් ඉර ඇඳීමට */
+    padding-bottom: 10px;
+}
+
+.section p {
+    font-size: 1.05em;
+    color: #ffffff;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.bg-light { /* පසුබිම් වර්ණ විකල්ප කොටස් සඳහා */
+    background: rgba(20, 20, 20, 0.753); /* විකල්ප කොටස් සඳහා ලා අළු */
+    border-top: #abadaf 1px solid;
+    border-bottom: #dee2e6 1px solid;
+}
+
+/* Grid Layout for Articles and Gallery - Grid layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
+    gap: 20px; /* අයිතම අතර වැඩි ඉඩක් */
+    margin-top: 40px;
+}
+
+.grid-container .item {
+    background: rgba(1, 6, 71, 0.8);
+    padding: 25px; /* වැඩි padding */
+    border-radius: 10px; /* වටකුරු කොන් */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* ශක්තිමත් සෙවනක් */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* අයිතමය තුළ පෙළ වමට පෙළගැස්වීමට */
+}
+
+.grid-container .item:hover {
+    transform: translateY(-8px); /* වඩාත් කැපී පෙනෙන ඉහළට එසවීම */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* hover කිරීමේදී ශක්තිමත් සෙවනක් */
+}
+
+.grid-container .item h2 {
+    color: #00b7ff;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.4em;
+}
+
+.grid-container .item p {
+    font-size: 0.9em; /* කියවීමට පහසුව සඳහා තරමක් කුඩා පෙළක් */
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* රූප කොන් වටකුරු කිරීමට */
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* සියුම් රූප සෙවනක් */
+}
+/* Category Navigation Buttons (Research & Gallery pages) */
+.category-nav, .sub-category-nav {
+    display: flex; /* බොත්තම් පේළියට තැබීමට */
+    flex-wrap: wrap; /* තිරයේ ඉඩ මදි වූ විට පහළට යැවීමට */
+    justify-content: center; /* බොත්තම් මැදට පෙළගැස්වීමට */
+    gap: 15px; /* බොත්තම් අතර පරතරය */
+    margin-bottom: 40px; /* කොටස් අතර ඉඩක් තැබීමට */
+    margin-top: 20px; /* ඉහළින් ඉඩක් තැබීමට */
+}
+
+/* ප්‍රධාන සහ උප-ප්‍රධාන category බොත්තම් සඳහා පොදු styles */
+.btn-category, .btn-sub-category {
+    display: inline-block;
+    background-color: #007bff; /* ඔබේ ප්‍රධාන වර්ණය (නිල්) */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* බොත්තම් පෙළ කැඩීම වැළැක්වීමට */
+    font-weight: bold;
+    border: none; /* පෙරනිමි border ඉවත් කිරීමට */
+    cursor: pointer; /* mouse pointer එක වෙනස් කිරීමට */
+}
+
+.btn-category:hover, .btn-sub-category:hover {
+    background-color: #0056b3; /* hover කරන විට තරමක් තද නිල් */
+    transform: translateY(-2px); /* තරමක් ඉහළට එසවීම */
+}
+
+/* Research/Gallery Category Sections (id="space-science", id="earth-science" වැනි) */
+.research-category, .gallery-category {
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* කොටස් වෙන් කිරීමට රේඛාවක් */
+    text-align: center; /* මාතෘකා සහ p ටැග් මැදට */
+}
+
+.research-category h3, .gallery-category h3 {
+    margin-bottom: 20px;
+    color: #ffd000; /* h3 වර්ණය යොදන්න */
+    font-size: 2.2em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.research-category p, .gallery-category p {
+    color: #ffffff; /* විස්තර පෙළ සඳහා ලා වර්ණයක් */
+    margin-bottom: 30px;
+}
+
+/* Sub-category content (PDFs, Articles, Logos, etc.) */
+.sub-category-content {
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px dashed rgba(6, 16, 107, 0.76); /* උප-කොටස් වෙන් කිරීමට තුනී රේඛාවක් */
+}
+
+.sub-category-content h4 {
+    margin-bottom: 25px;
+    color: #06fc95; /* h4 වර්ණය යොදන්න */
+    font-size: 1.8em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-align: center; /* h4 මාතෘකාව මැදට ගැනීමට */
+}
+
+/* "About Me" පිටුව සඳහා විශේෂ styles */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left; /* about content තුළ පෙළ වමට පෙළගැස්වීමට */
+}
+
+.about-content .profile-img {
+    width: 200px; /* profile picture ප්‍රමාණය */
+    height: 200px;
+    border-radius: 50%; /* වටකුරු කිරීමට */
+    object-fit: cover; /* රූපය ප්‍රදේශය ආවරණය වන බවට වග බලා ගැනීමට */
+    margin-bottom: 30px;
+    border: 5px solid #4a90e2; /* profile pic වටා මායිම */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.about-content p {
+    color: #e0e0e0; /* ලා අළු පැහැයක් - ඔබේ වෙබ් අඩවියේ තද පසුබිමට හොඳින් කැපී පෙනෙනවා */
+    font-family: 'Open Sans', sans-serif; /* ඔබේ වෙබ් අඩවියේ ප්‍රධාන paragraph font */
+    font-size: 1.1em; /* ඔබ ලබා දුන් අගය */
+    line-height: 1.8; /* ඔබ ලබා දුන් අගය */
+    margin-bottom: 20px; /* ඔබ ලබා දුන් අගය */
+}
+/* General Link Styling (වෙබ් අඩවියේ අනෙකුත් links වලටත් බලපානවා) */
+/* ------------------------------------------- */
+a {
+    color: #006eff; /* සමස්ත වෙබ් අඩවියේ links වල default color */
+    text-decoration: none; /* යටින් ඉර ඉවත් කරන්න */
+    font-family: 'Open Sans', sans-serif; /* Default link font */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff; /* Default hover color */
+    text-decoration: underline; /* hover වන විට යටින් ඉරක් */
+}
+
+
+/* About Me Section හි Links (a tags) සඳහා විශේෂ styling */
+.about-content p a {
+    color: #00b7ff; /* දීප්තිමත් නිල් - ඔබේ තේමාවේ ප්‍රධාන link වර්ණය */
+    text-decoration: underline; /* යටින් ඉරක් දැමීමෙන් link එකක් බව පැහැදිලි කරයි */
+    font-weight: bold; /* අකුරු ඝන කිරීමෙන් වඩාත් කැපී පෙනේ */
+    transition: color 0.3s ease; /* hover effect එකට සුමට බවක් ලබා දෙයි */
+}
+
+/* About Me Section හි Links මත mouse එක ගෙන යන විට (hover) */
+.about-content p a:hover {
+    color: #ffffff; /* hover වන විට සුදු පැහැය (හෝ ඔබට කැමති වෙනත් වර්ණයක්) */
+    text-decoration: none; /* hover වන විට යටින් ඉර ඉවත් කිරීමට */
+}
+
+/* NASA APOD Section Styles */
+#nasa-apod-section {
+    padding: 60px 0;
+    text-align: center;
+    background: rgba(10, 10, 10, 0.7); /* ඔබගේ section background එකට ගැලපෙන ලෙස */
+    color: #fff; /* අකුරු වල වර්ණය */
+}
+
+#nasa-apod-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    color: #00fdfd; /* ඔබගේ H2 color එකම */
+    border-bottom: 2px solid #35068b;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#apod-container {
+    background: rgba(2, 7, 77, 0.8); /* APOD content box background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    max-width: 800px; /* content box එකේ උපරිම පළල */
+    margin: 30px auto; /* මැදට පෙළගැස්වීමට */
+    text-align: left; /* අන්තර්ගතය වමට පෙළගැස්වීමට */
+}
+
+#apod-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    display: block; /* images වලට */
+    margin-left: auto; /* රූපය මැදට ගැනීමට */
+    margin-right: auto; /* රූපය මැදට ගැනීමට */
+}
+
+#apod-container h3 {
+    font-size: 2em;
+    color: #ffd000; /* h3 color */
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center; /* මාතෘකාව මැදට ගැනීමට */
+}
+
+#apod-container p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #ffffff;
+    margin-bottom: 0;
+    text-align: justify; /* පෙළ දෙපැත්තට පෙළගැස්වීමට */
+}
+
+#apod-container iframe {
+    width: 100%;
+    height: 400px; /* වීඩියෝ player එකේ උස */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Error Message Style */
+#apod-container p[style*="color: red"] {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+#apod-container p[style*="color: #aaa"] {
+    font-size: 0.9em;
+    text-align: center;
+}
+/* NASA Image and Video Library Section Styles */
+#nasa-library-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#nasa-library-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: #00fdfd; /* ඔබේ heading color */
+    border-bottom: 2px solid #35068b;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.bg-dark-alt {
+    background-color: rgba(5, 5, 20, 0.9); /* ටිකක් තද අඳුරු පසුබිමක් */
+    color: #ffffff;
+}
+.search-bar {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* input field and button අතර පරතරය */
+}
+
+.search-bar input[type="text"] {
+    padding: 12px 20px;
+    width: 60%; /* input field එකේ පළල */
+    max-width: 400px;
+    border: 1px solid #35068b;
+    border-radius: 5px;
+    background-color: rgba(2, 7, 77, 0.5);
+    color: #fff;
+    font-size: 1.1em;
+    outline: none; /* focus border ඉවත් කිරීමට */
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+.search-bar button {
+    background-color: #00fdfd;
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #00cccc;
+}
+
+.nasa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px ට වඩා කුඩා නොවී තීරු සෑදීමට */
+    gap: 30px; /* images අතර පරතරය */
+    margin-top: 30px;
+}
+
+.nasa-item {
+    background: rgba(2, 7, 77, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* image/video corner rounding */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* content bottom එකට එන්න */
+}
+
+.nasa-item img,
+.nasa-item iframe {
+    max-width: 100%;
+    height: 200px; /* images/videos වලට fix height එකක් */
+    object-fit: cover; /* crop කරලා වුණත් image එක පුරවන්න */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+}
+
+.nasa-item h3 {
+    font-size: 1.5em;
+    color: #ffd000;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.nasa-item p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #d0d0d0;
+    flex-grow: 1; /* P tag එකට ඉතිරි ඉඩ ප්‍රමාණය ගන්න දෙන්න */
+    overflow: hidden; /* text overflow hide කිරීමට */
+    text-overflow: ellipsis; /* ... පෙන්වීමට */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* පේළි 3කට සීමා කිරීමට */
+    -webkit-box-orient: vertical;
+}
+
+.nasa-item .learn-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #00fdfd;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nasa-item .learn-more:hover {
+    color: #00cccc;
+}
+
+.loading-message, .error-message {
+    color: #e0e0e0;
+    font-size: 1.2em;
+    text-align: center;
+    grid-column: 1 / -1; /* grid එකේ මැදට ගැනීමට */
+    padding: 50px 0;
+}
+
+.error-message {
+    color: #ff6347; /* Error message color */
+}
+
+.load-more-btn {
+    margin-top: 40px;
+    background-color: #00fdfd;
+    color: #000;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: #00cccc;
+}
+
+/* GBIF Biodiversity Library Section Styles */
+#gbif-library-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: rgba(5, 5, 20, 0.9); /* same as bg-dark-alt */
+    color: #e0e0e0;
+}
+
+#gbif-library-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: #00fdfd;
+    border-bottom: 2px solid #35068b;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#gbif-library-section .search-bar {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#gbif-library-section .search-bar input[type="text"] {
+    padding: 12px 20px;
+    width: 60%;
+    max-width: 400px;
+    border: 1px solid #35068b;
+    border-radius: 5px;
+    background-color: rgba(2, 7, 77, 0.5);
+    color: #fff;
+    font-size: 1.1em;
+    outline: none;
+}
+
+#gbif-library-section .search-bar input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+#gbif-library-section .search-bar button {
+    background-color: #00fdfd;
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#gbif-library-section .search-bar button:hover {
+    background-color: #00cccc;
+}
+
+.gbif-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.gbif-item {
+    background: rgba(2, 7, 77, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gbif-item img {
+    max-width: 100%;
+    height: 200px; /* fix height */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+}
+
+.gbif-item h3 {
+    font-size: 1.5em;
+    color: #ffd000;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.gbif-item p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #d0d0d0;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* description වලට වැඩි පේළි ගණනක් */
+    -webkit-box-orient: vertical;
+}
+
+.gbif-item .view-details {
+    display: inline-block;
+    margin-top: 15px;
+    color: #00fdfd;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.gbif-item .view-details:hover {
+    color: #00cccc;
+}
+/* Splash Screen Styles (අලුතින් එකතු කරන කොටස) */
+#splash-screen {
+    position: fixed; /* තිරයේ ස්ථාවරව තැබීමට */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #04012c; /* අඳුරු පසුබිම (ඔබට රතු පාටට වෙනස් කළ හැක: #ff0000) */
+    display: flex; /* අන්තර්ගතය මැදට ගැනීමට */
+    justify-content: center; /* තිරස් අතට මැදට */
+    align-items: center; /* සිරස් අතට මැදට */
+    flex-direction: column; /* මෙතනට එකතු කරන්න - අන්තර්ගතය තීරු ලෙස සකසයි */
+    z-index: 9999; /* අනෙකුත් සියලුම අන්තර්ගතයන්ට වඩා ඉහළින් තැබීමට */
+    opacity: 1; /* ආරම්භයේදී පෙන්වීමට */
+    transition: opacity 1s ease-out; /* මැකී යාමේ (fade out) transition එක */
+}
+
+#splash-screen.fade-out {
+    opacity: 0; /* මැකී යාමට */
+    pointer-events: none; /* මැකී යන විට clicks වළක්වා ගැනීමට */
+}
+
+.splash-text {
+    font-family: 'Montserrat', sans-serif; /* ඔබේ heading font එක */
+    font-size: 4em; /* විශාල අකුරු ප්‍රමාණය */
+    color: #00e1ff; /* දීප්තිමත් නිල් (ඔබේ hero h2 color) */
+    text-shadow: 0 0 15px rgba(2, 13, 65, 0.7),
+                 0 0 30px rgba(4, 38, 102, 0.5); /* glow effect */
+    margin: 20; /* අනවශ්‍ය margins ඉවත් කිරීමට */
+    padding: 20px;
+    text-align: center;
+}
+
+.splash-logo {
+    max-width: 300px; /* ලාංඡනයට උපරිම පළලක් */
+    height: auto;
+    display: block;
+}
+.asteroid-viewer-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width = 9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-top: 30px; /* ඉහළින් යම් පරතරයක් */
+    margin-bottom: 30px; /* පහළින් යම් පරතරයක් */
+}
+
+.asteroid-viewer-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #00b7ff; /* රාමුවක් එකතු කිරීමට (ඔබේ theme color) */
+    border-radius: 8px; /* දාර වටකුරු කිරීමට */
+    box-shadow: 0 0 20px rgba(0, 183, 255, 0.5); /* නිල් පැහැති glow එකක් */
+}
+/* Mobile Warning Message Styling */
+#mobileWarningMessage {
+    background-color: rgba(255, 204, 0, 0.2); /* මෘදු කහ පැහැති පසුබිමක් */
+    color: #ffc400; /* කහ පැහැති text */
+    border: 1px solid #ffcc00; /* කහ පැහැති මායිමක් */
+    padding: 15px;
+    margin-bottom: 25px; /* live stream එකට උඩින් ඉඩක් */
+    border-radius: 8px;
+    font-size: 0.95em;
+    text-align: center;
+    /* display: none; will be handled by JavaScript */
+}
+
+#mobileWarningMessage i {
+    margin-right: 10px; /* icon එක සහ text එක අතර පරතරය */
+    color: #ffcc00; /* icon එකේ වර්ණය */
+}
+/* Privacy Policy Specific Styles */
+#privacy-policy-section h3 {
+    color: #00fdfd; /* ඔබේ h2 color එකට ගැලපෙන පරිදි */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left; /* මාතෘකා වමට පෙළගැස්වීමට */
+}
+
+#privacy-policy-section h4 {
+    color: #ffa600; /* ඔබේ h3 color එකට ගැලපෙන පරිදි */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left; /* උප-මාතෘකා වමට පෙළගැස්වීමට */
+}
+
+#privacy-policy-section p,
+#privacy-policy-section ul {
+    color: #d0d0d0; /* ලා අළු පාට */
+    text-align: left; /* පෙළ වමට පෙළගැස්වීමට */
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+#privacy-policy-section ul {
+    list-style-type: disc; /* bullet points */
+    margin-left: 20px; /* bullets සඳහා ඉඩක් */
+    padding-left: 10px;
+}
+
+#privacy-policy-section ul li {
+    margin-bottom: 8px;
+}
+.about-summary-content {
+    display: flex;
+    flex-direction: column; /* කුඩා තිර සඳහා සිරස් අතට */
+    align-items: center;
+    gap: 40px; /* රූපය සහ පෙළ අතර පරතරය */
+    max-width: 900px;
+    margin: 0 auto; /* මැදට පෙළගැස්වීමට */
+    text-align: center; /* පෙරනිමියෙන් පෙළ මැදට */
+}
+.about-text-content {
+    flex-grow: 1; /* පෙළ කොටසට ඉතිරි ඉඩ ප්‍රමාණය ගැනීමට ඉඩ දෙයි */
+}
+
+.skills-and-interests {
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #ffffff; /* ඔබගේ පවතින paragraph text color භාවිතා කරයි */
+    font-size: 1.05em; /* ඔබගේ පවතින paragraph font size භාවිතා කරයි */
+    text-align: center; /* කුඩා තිර මත මැදට තබා ගැනීමට */
+}
+
+.skills-and-interests .icon-small { /* කුසලතා අයිකන සඳහා style */
+    color: #00fcbd; /* ඔබගේ පවතින h4 color භාවිතා කරයි */
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* Connect with Me Section */
+/* මෙය contact-info, social-links, social-icon නම් නව classes/IDs වලට අදාළ වේ. */
+.contact-info {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1.2em; /* සම්බන්ධතා තොරතුරු පෙළට තරමක් විශාල අකුරු */
+    color: #f0f0f0; /* ලා අළු පාට */
+    margin-bottom: 15px;
+    display: flex; /* අයිකනය සහ පෙළ එකට පෙළගැස්වීමට */
+    align-items: center; /* සිරස් අතට මැදට */
+    justify-content: center; /* තිරස් අතට මැදට */
+}
+
+.contact-info p i {
+    margin-right: 10px;
+    color: #00fdfd; /* අයිකන වර්ණය, ඔබගේ h2 color එකට ගැලපේ */
+    font-size: 1.3em;
+}
+
+.contact-info p a {
+    color: #ffa600; /* සබැඳි වර්ණය, ඔබගේ h3 color එකට ගැලපේ */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info p a:hover {
+    color: #06c4f3; /* hover වර්ණය, ඔබගේ h1 color එකට ගැලපේ */
+}
+
+.social-links {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.social-links h3 {
+    /* ඔබගේ පවතින h3 style භාවිතා කරයි, නමුත් මෙහි වර්ණය වෙනස් කර ඇත. */
+    color: #06fc3f; /* ඔබගේ h4 color එක භාවිතා කරයි */
+    margin-bottom: 25px;
+    font-size: 1.8em; /* ඔබගේ h3 ප්‍රමාණයටම ගැලපේ */
+}
+
+.social-icon { /* එක් එක් සමාජ මාධ්‍ය බොත්තම */
+    display: inline-flex; /* අයිකනය සහ පෙළ වඩා හොඳින් පෙළගැස්වීමට */
+    align-items: center; /* සිරස් අතට අයිකනය සහ පෙළ පෙළගැස්වීමට */
+    justify-content: center;
+    color: #fff;
+    background-color: #007bff; /* ඔබගේ primary button color */
+    padding: 12px 25px;
+    margin: 0 10px 15px; /* බොත්තම් අතර පරතරය */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+}
+
+.social-icon i {
+    margin-right: 8px;
+    font-size: 1.2em; /* අයිකන තරමක් විශාල කිරීමට */
+}
+
+.social-icon:hover {
+    background-color: #0056b3; /* hover කරන විට තද නිල් */
+    transform: translateY(-3px); /* ඉහළට එසවීමේ ආචරණය */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* සියුම් සෙවනක් */
+}
+
+.future-contact-form-placeholder { /* අනාගත contact form සඳහා placeholder style */
+    padding: 20px;
+    border: 1px dashed #ffa600; /* තැඹිලි පාට තිත් මායිමක් */
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 30px auto;
+    color: #ffc400; /* කහ පැහැති පෙළ */
+    font-style: italic;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+/* Future Glimpse Section */
+/* මෙය quote නම් නව class එකට අදාළ වේ. */
+#future-glimpse-section {
+    padding: 80px 20px;
+    /* background-color: rgba(5, 5, 20, 0.9); (ඔබගේ .bg-dark-alt මගින් පාලනය වේ) */
+    color: #e0e0e0; /* ඔබගේ පවතින paragraph text color භාවිතා කරයි */
+}
+
+.quote { /* උපුටා දැක්වීම් සඳහා විශේෂ style */
+    font-family: 'Montserrat', sans-serif; /* ඔබගේ heading font භාවිතා කරයි */
+    font-size: 1.5em;
+    font-style: italic;
+    color: #00fcbd; /* ඔබගේ h4 color භාවිතා කරයි */
+    margin: 40px auto;
+    max-width: 700px;
+    padding: 20px;
+    border-left: 5px solid #ffa600; /* තැඹිලි පාට මායිමක් */
+    line-height: 1.8;
+    text-align: center;
+}
+
+.quote br {
+    display: block;
+    margin-bottom: 10px; /* උපුටා දැක්වීම සහ කර්තෘ අතර පරතරය */
+}
+
+
+/* Footer - වෙබ් අඩවියේ යට තීරුව */
+footer {
+    background: #011224; /* තද නිල්/අළු */
+    color: #e9ecef; /* ලා අළු පෙළ */
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85em;
+}
+footer .footer-link {
+    color: #00b7ff; /* ඔබේ තේමාවේ නිල් පැහැය */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .footer-link:hover {
+    color: #ffffff; /* hover වන විට සුදු පැහැය */
+    text-decoration: underline;
+}
+/* Responsive Design for Mobile Devices - ජංගම දුරකථන සඳහා ප්‍රතිචාරාත්මක සැලසුම */
+@media (max-width: 768px) {
+    /* PC/Tablet Background Video එක Mobile වල නොපෙන්වීමට */
+    #desktop-background-video {
+        display: none;
+    }
+    /* ජංගම පසුබිම් රූප container එක පෙන්වීමට */
+    body {
+        /* ඔබේ සිරස් (portrait) image එකේ URL එක මෙතනට දමන්න */
+        background-image: url('https://cdn.glitch.global/a424c671-d40d-4172-b77e-5d28d867cf59/Untitled%20design.jpg?v=1749564875468');
+        background-size: cover;
+        background-position: center center; /* හරියටම මැදට position කරන්න */
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* scroll වෙනුවට fixed භාවිතා කරන්න */
+        min-height: 100vh; /* පූර්ණ screen height එක cover කරන්න */
+    }
+
+    #main-header .container {
+        flex-direction: column; /* logo සහ nav සිරස් අතට තැබීමට */
+        align-items: flex-start; /* වමට පෙළගැස්වීමට */
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+        font-size: 1.5em;
+    }
+
+    #navbar {
+        width: 100%;
+    }
+
+    #navbar ul {
+        flex-direction: column; /* nav අයිතම සිරස් අතට තැබීමට */
+        width: 100%;
+        text-align: center;
+        display: none; /* ජංගම මත nav links පෙරනිමියෙන් නොපෙන්වීමට */
+        background: #05215a; /* සංකෝචනය වූ මෙනුව සඳහා පසුබිම */
+        padding: 10px 0;
+    }
+
+    #navbar ul.active {
+        display: flex; /* active විට පෙන්වීමට */
+    }
+
+    #navbar li {
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    #navbar a {
+        display: block; /* links සම්පූර්ණ පළල කිරීමට */
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block; /* ජංගම මත menu toggle බොත්තම පෙන්වීමට */
+        align-self: flex-end; /* දකුණට ස්ථානගත කිරීමට */
+        margin-top: -35px; /* logo සමඟ පෙළගැස්වීමට සකස් කරන්න */
+    }
+    
+    .hero h2 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .container {
+        width: 95%; /* කුඩා තිර සඳහා container පළල සකස් කරන්න */
+    }
+
+    .about-content .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-content p {
+        font-size: 1em;
+    }
+        /* APOD section mobile adjustments */
+    #apod-container {
+        padding: 20px;
+    }
+    #apod-container h3 {
+        font-size: 1.5em;
+    }
+    #apod-container p {
+        font-size: 0.95em;
+    }
+    #apod-container iframe {
+        height: 250px; /* mobile වලට වීඩියෝ උස අඩු කරන්න */
+    }
+        /* NASA Library Section Mobile Adjustments */
+    #nasa-library-section h2 {
+        font-size: 2em;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 90%;
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    .search-bar button {
+        width: 90%;
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .nasa-grid {
+        grid-template-columns: 1fr; /* mobile එකේදී තනි තීරුවක් */
+    }
+
+    .nasa-item {
+        padding: 15px;
+    }
+
+    .nasa-item img,
+    .nasa-item iframe {
+        height: 180px; /* mobile වලට height එක අඩු කරන්න */
+    }
+
+    .nasa-item h3 {
+        font-size: 1.3em;
+    }
+
+    .nasa-item p {
+        font-size: 0.9em;
+    }
+
+    .loading-message, .error-message {
+        font-size: 1em;
+    }
+        /* GBIF Library Section Mobile Adjustments */
+    #gbif-library-section h2 {
+        font-size: 2em;
+    }
+
+    #gbif-library-section .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #gbif-library-section .search-bar input[type="text"] {
+        width: 90%;
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    #gbif-library-section .search-bar button {
+        width: 90%;
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .gbif-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gbif-item {
+        padding: 15px;
+    }
+
+    .gbif-item img {
+        height: 180px;
+    }
+
+    .gbif-item h3 {
+        font-size: 1.3em;
+    }
+
+    .gbif-item p {
+        font-size: 0.9em;
+    }
+    .splash-text {
+        font-size: 2.2em; /* ජංගම දුරකථන සඳහා අකුරු ප්‍රමාණය අඩු කිරීමට */
+        margin-top: 15px; /* ජංගම දුරකථන සඳහා */
+    }
+    .splash-logo {
+        max-width: 240px; /* ජංගම දුරකථන සඳහා ලාංඡන ප්‍රමාණය අඩු කිරීමට */
+    }
+        .asteroid-viewer-wrapper {
+        padding-bottom: 75%; /* කුඩා තිර සඳහා වඩා හොඳ අනුපාතයක් */
+    }
+      .about-summary-content {
+        flex-direction: row; /* විශාල තිර සඳහා තිරස් අතට */
+        text-align: left; /* පෙළ වමට පෙළගැස්වීමට */
+    }
+      /* පොදු sections සඳහා padding අඩු කරයි, මෙය ඔබගේ කලින් CSS වලත් තිබේ. */
+    #about-summary-section,
+    #contact-me-section,
+    #future-glimpse-section {
+        padding: 60px 15px;
+    }
+
+    .about-summary-content {
+        gap: 30px;
+    }
+
+    .about-text-content {
+        text-align: center; /* කුඩා තිර මත පෙළ මැදට */
+    }
+
+    .skills-and-interests {
+        text-align: center; /* කුඩා තිර මත කුසලතා ලැයිස්තුව මැදට */
+    }
+
+    .contact-info p {
+        flex-direction: column; /* අයිකනය සහ පෙළ සිරස් අතට */
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-info p i {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .social-icon {
+        padding: 10px 20px;
+        font-size: 1em;
+        margin: 0 8px 10px;
+    }
+
+    .social-links h3 {
+        font-size: 1.5em;
+    }
+
+    .quote {
+        font-size: 1.2em;
+        padding: 15px;
+        margin: 30px auto;
+    }
+}
+/* ජංගම දුරකථන (උපරිම පළල 600px) සඳහා */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* එක් තීරුවක් පමණක් පෙන්වීමට */
+        gap: 15px; /* ඔබට අවශ්‍ය පරතරය සකසන්න */
+    }
+    .btn-category, .btn-sub-category {
+        flex-grow: 1; /* බොත්තම් තිරයේ සම්පූර්ණ පළල ගැනීමට */
+        text-align: center;
+        margin-bottom: 10px; /* ජංගම මත බොත්තම් අතර ඉඩ */
+    }
+    .category-nav, .sub-category-nav {
+        flex-direction: column; /* බොත්තම් සිරස් අතට තැබීමට */
+        align-items: stretch; /* පළලින් දිගු කිරීමට */
+    }
+}
+
+/* තිරය 768px ට වඩා විශාල නමුත් 1024px ට වඩා කුඩා Tablets සඳහා තීරු 3ක් වැනි දෙයක් සකසන්න පුළුවන් */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Tablets සඳහා තීරු 2-3 ක් වැනි */
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icon {
+        width: 80%; /* ඉතා කුඩා තිර මත බොත්තම් විශාල කිරීමට */
+        margin: 10px auto;
+    }
+    .about-text-content p {
+        font-size: 0.95em;
+    }
+    .contact-info p {
+        font-size: 1em;
+    }
+}
+
+
+
+
+

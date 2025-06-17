@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Hub - Science Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://cdn.glitch.global/a424c671-d40d-4172-b77e-5d28d867cf59/new%20seker%203.png?v=1749526406976" type="image/x-icon"> 
+    <link rel="icon" href="https://cdn.glitch.global/a424c671-d40d-4172-b77e-5d28d867cf59/new%20seker%203.png?v=1749526406976" type="image/png">
+</head>
+<body>
+    <video autoplay muted loop playsinline id="desktop-background-video">
+        <source src="https://cdn.glitch.global/b41ebe00-cbf2-40e4-b7cd-5175204ea5e3/body%20i%20background%20vid.mp4?v=1749354812183" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header id="main-header">
+        <div class="container">
+            <h1 class="logo">Cosmic Seeker</h1>
+            <nav id="navbar">
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="articles.html">Research</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="end.html">Vision</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+    <section id="asteroids-live" class="section">
+        <div class="container">
+            <h2>NASA Eyes on system(Live View)</h2>
+            <div id="mobileWarningMessage" style="display: none;">
+                <p><i class="fas fa-exclamation-triangle"></i> Note: For the best experience, this live stream is optimized for desktop viewing. Performance on mobile devices may vary.</p>
+            </div>
+            <div class="asteroid-viewer-wrapper">
+                <iframe
+                    src="https://eyes.nasa.gov/apps/asteroids/#/?embed=true"
+                    width="100%"
+                    height="600px"
+                    frameborder="0"
+                    allowfullscreen
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    title="NASA Eyes on Asteroids Live View">
+                </iframe>
+            </div>
+            <p>Explore the 3D world of asteroids, comets, and Near-Earth Objects (NEOs) in real-time. This interactive visualization provides detailed information on their orbits and approaches to Earth, directly from NASA's data.</p>
+        </div>
+    </section>
+    </main>
+        <main>
+        <section id="nasa-library-section" class="section bg-dark-alt">
+            <div class="container">
+                <h2>Explore from NASA's Vast Archives</h2>
+                <div class="search-bar">
+                    <input type="text" id="nasa-search-input" placeholder="Search NASA images/videos (e.g., galaxy, nebula, black hole)">
+                    <button id="nasa-search-button"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div id="nasa-library-results" class="nasa-grid">
+                    <p class="loading-message">Search or click 'Search' to see recent discoveries...</p>
+                </div>
+                <button id="load-more-button" class="btn load-more-btn" style="display: none;">Load More</button>
+            </div>
+        </section>
+        </main>
+        <main>
+                <section id="gbif-library-section" class="section bg-dark-alt">
+            <div class="container">
+                <h2>Explore Global Biodiversity</h2>
+                <div class="search-bar">
+                    <input type="text" id="gbif-search-input" placeholder="Search species (e.g., Panthera leo, butterfly, bird)">
+                    <button id="gbif-search-button"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div id="gbif-results" class="gbif-grid">
+                    <p class="loading-message">Search for species to see biodiversity data...</p>
+                </div>
+                <button id="gbif-load-more-button" class="btn load-more-btn" style="display: none;">Load More</button>
+            </div>
+        </section>
+        </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My Science Portfolio. All rights reserved.</p>
+            <p>Data provided by NASA, GBIF, and Other websites.</p>
+            <p>Designed and Developed by Savija Rumeth.</p>
+            <p><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

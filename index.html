@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Seeker | Science Portfolio by Savija</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://cdn.glitch.global/a424c671-d40d-4172-b77e-5d28d867cf59/new%20seker%203.png?v=1749526406976" type="image/x-icon"> 
+    <link rel="icon" href="https://cdn.glitch.global/a424c671-d40d-4172-b77e-5d28d867cf59/new%20seker%203.png?v=1749526406976" type="image/png">
+</head>
+<body>
+    <!-- Splash Screen (අලුතින් එකතු කරන කොටස) -->
+    <div id="splash-screen">
+        <img src="https://cdn.glitch.global/a424c671-d40d-4172-b77e-5d28d867cf59/new%20seker%203.png?v=1749526406976" alt="Cosmic Seeker Logo" class="splash-logo">
+        <h1 class="splash-text">Science Portfolio</h1>
+    </div>
+    <!-- Splash Screen End -->
+    <video autoplay muted loop playsinline id="desktop-background-video">
+        <source src="https://cdn.glitch.global/b41ebe00-cbf2-40e4-b7cd-5175204ea5e3/body%20i%20background%20vid.mp4?v=1749354812183" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header id="main-header">
+        <div class="container">
+            <h1 class="logo">Cosmic Seeker</h1>
+            <nav id="navbar">
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="articles.html">Research</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="end.html">Vision</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+          <video autoplay muted loop id="hero-video">
+            <source src="https://cdn.glitch.me/b41ebe00-cbf2-40e4-b7cd-5175204ea5e3/24623-345209544_large.mp4?v=1749231613954" type="video/mp4">
+             ඔබගේ browser එක වීඩියෝ සපෝට් කරන්නේ නැත.
+          </video>
+
+          <div class="container">
+            <h2>Exploring the Wonders of Science..</h2>
+              <p>Your Gateway from the Mysteries of Space to the Wonders of Life on Earth</p>
+              <a href="#about-summary" class="btn">Discover</a>
+          </div>
+        </section>
+
+        <section id="about-summary" class="section">
+            <div class="container">
+                <h2>Summary</h2>
+                <h3> Content</h3>
+                <p>'Cosmic Seeker' website is designed to satisfy your curiosity about the fascinating world of science. Here, you'll have the opportunity to delve into the profound mysteries of Space Science, navigating through NASA's incredible databases of galaxies, planets, and stars. Explore the boundless universe and gain new insights through its stunning images and videos.
+                    Furthermore, our website shifts its focus to Earth, covering critical aspects of Biology. Here you can Biodiversity and Botany: Explore the vast distribution of life on Earth, diverse animal and plant species, and their habitats through the GBIF (Global Biodiversity Information Facility) API. Discover the astonishing diversity of life on our planet using information collected by scientists worldwide.
+                   'Cosmic Seeker' provides you with the knowledge and visual experiences you seek, whether you're learning about the immensity of the universe, exploring the hidden life in the depths of the ocean, or uncovering the diversity of life on Earth. It will serve as an essential resource for science enthusiasts, students, and anyone with a thirst for knowledge.
+</p>
+                <a href="articles.html" class="btn">View Research</a>
+                <a href="gallery.html" class="btn">View Gallery</a>
+                <h3>Knowledge Hub</h3>
+                <p>Nasa (asteroids) live system</p>
+                <a href="library.html#asteroids-live" class="btn btn-category">live</a>
+                <p>Explore the cosmos with NASA's vast archives: stunning images, missions, and discoveries from across the universe.</p>
+                <a href="library.html#nasa-library-section" class="btn btn-category">Search</a>
+                <p>Delve into Earth's biodiversity via GBIF: millions of species occurrences, habitats, and ecological insights worldwide.</p>
+                <a href="library.html#gbif-library-section" class="btn btn-category">Search</a>
+                <h3>Who I am</h3>
+                <p>Driven by a profound passion for the universe and scientific exploration, this website serves as my dedicated platform to share knowledge, insights, and creations with a global audience. Join me on a journey through the wonders of scientific discovery!</p>
+                <a href="about.html" class="btn">Read My Full Story</a> </div>
+        </section>
+        
+        <section id="nasa-apod-section" class="section bg-light">
+            <div class="container">
+                <h2 data-translate="nasa_title">NASA Astronomy Picture of the Day</h2>
+                <div id="apod-container">
+                    <p>Loading NASA Astronomy Picture of the Day...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My Science Portfolio. All rights reserved.</p>
+            <p>Data provided by NASA, GBIF, and Other websites.</p>
+            <p>Designed and Developed by Savija Rumeth.</p>
+          <p><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
